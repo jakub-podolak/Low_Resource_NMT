@@ -1,0 +1,30 @@
+name: nmt
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - pip
+  - python=3.10
+  - transformers
+  - nmslib
+  - pip:
+      - torch
+      - openai
+      - tiktoken
+      - accelerate
+      - numpy
+      - jupyter
+      - pandas
+      - python-dotenv
+      - pyarrow
+      - matplotlib
+      - seaborn
+      - scikit-learn
+      - retry
+      - openai
+      - transformers==4.49
+      - datasets
+      - evaluate
+      - sacremoses
+      - sacrebleu
+      - unbabel-comet
