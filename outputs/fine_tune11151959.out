@@ -1,0 +1,29 @@
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: xxhash in /gpfs/home2/scur2189/.local/lib/python3.9/site-packages (3.5.0)
+{'loss': 2.55, 'grad_norm': 2.8266923427581787, 'learning_rate': 1.7248226950354612e-05, 'epoch': 0.43}
+{'loss': 1.7906, 'grad_norm': 2.618194818496704, 'learning_rate': 1.4411347517730499e-05, 'epoch': 0.85}
+{'eval_loss': 1.456800937652588, 'eval_bleu': 5.477484210845879, 'eval_runtime': 52.7835, 'eval_samples_per_second': 18.945, 'eval_steps_per_second': 0.606, 'epoch': 1.0}
+{'loss': 1.6211, 'grad_norm': 2.0207700729370117, 'learning_rate': 1.1574468085106382e-05, 'epoch': 1.28}
+{'loss': 1.5157, 'grad_norm': 2.1302061080932617, 'learning_rate': 8.73758865248227e-06, 'epoch': 1.7}
+{'eval_loss': 1.302295207977295, 'eval_bleu': 6.533891412100521, 'eval_runtime': 52.1497, 'eval_samples_per_second': 19.176, 'eval_steps_per_second': 0.614, 'epoch': 2.0}
+{'loss': 1.4646, 'grad_norm': 2.2118260860443115, 'learning_rate': 5.900709219858156e-06, 'epoch': 2.13}
+{'loss': 1.405, 'grad_norm': 2.3299171924591064, 'learning_rate': 3.0638297872340428e-06, 'epoch': 2.55}
+{'loss': 1.3849, 'grad_norm': 2.086909770965576, 'learning_rate': 2.2695035460992912e-07, 'epoch': 2.98}
+{'eval_loss': 1.2634586095809937, 'eval_bleu': 7.153813800656459, 'eval_runtime': 52.0942, 'eval_samples_per_second': 19.196, 'eval_steps_per_second': 0.614, 'epoch': 3.0}
+{'train_runtime': 206.2138, 'train_samples_per_second': 109.11, 'train_steps_per_second': 3.419, 'train_loss': 1.6738286268626545, 'epoch': 3.0}
+Test BLEU score: 7.13
+
+JOB STATISTICS
+==============
+Job ID: 11151959
+Cluster: snellius
+User/Group: scur2189/scur2189
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 01:25:30 core-walltime
+Job Wall-clock time: 00:04:45
+Memory Utilized: 0.00 MB
+Memory Efficiency: 0.00% of 120.00 GB (120.00 GB/node)
+WARNING: Efficiency statistics can only be obtained after the job has ended as seff tool is based on the accounting database data.

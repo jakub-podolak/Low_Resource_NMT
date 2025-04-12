@@ -1,0 +1,14 @@
+#!/bin/sh
+
+#SBATCH --partition=gpu_a100
+#SBATCH --gpus=1
+#SBATCH --job-name=FT_opus_medline
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --time=2:00:00
+#SBATCH --output=outputs/fine_tune%A.out
+#SBATCH --error=outputs/fine_tune_error_%A.err
+
+source /home/scur2189/env/bin/activate
+pip install xxhash
+python3 scripts/FT_opus_medline_forward.py

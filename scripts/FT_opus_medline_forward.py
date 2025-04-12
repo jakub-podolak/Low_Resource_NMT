@@ -64,7 +64,7 @@ def compute_metrics(eval_preds):
 # Training Arguments
 training_args = Seq2SeqTrainingArguments(
     output_dir=OUTPUT_DIR,
-    evaluation_strategy="epoch",
+    eval_strategy="epoch",
     learning_rate=2e-5,
     per_device_train_batch_size=BATCH_SIZE,
     per_device_eval_batch_size=BATCH_SIZE,
@@ -103,7 +103,7 @@ tokenizer.save_pretrained(f"{OUTPUT_DIR}/fine-tuned-opus-mt-en-ru")
 
 # Generate translations for test set
 model.eval()
-test_texts = dataset["test"][SRC_LANG]
+test_texts = dataset["dev"][SRC_LANG]
 translations = []
 
 for i in tqdm(range(0, len(test_texts), BATCH_SIZE), desc="Translating"):
@@ -119,6 +119,6 @@ for i in tqdm(range(0, len(test_texts), BATCH_SIZE), desc="Translating"):
 
 # Evaluate test translations
 test_bleu = compute_metrics((tokenizer(translations, padding=True, truncation=True, max_length=MAX_LENGTH).input_ids,
-                             tokenizer(dataset["test"][TGT_LANG], padding=True, truncation=True, max_length=MAX_LENGTH).input_ids))
+                             tokenizer(dataset["dev"][TGT_LANG], padding=True, truncation=True, max_length=MAX_LENGTH).input_ids))
 
 print(f"Test BLEU score: {test_bleu['bleu']:.2f}")
