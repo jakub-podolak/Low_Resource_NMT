@@ -36,18 +36,12 @@ def compute_comet(src, tgt, preds) -> float:
     Returns:
         metrics: Dictionary containing COMET score
     """
-    comet_metric = load("comet")
-    
-    references = [[ref] for ref in tgt]
-    
-    # compute COMET score
-    results = comet_metric.compute(predictions=preds, references=references, sources=src)
+    comet_metrics = load("comet")
 
-    print(results)
-    
-    # The results typically contain {'comet': <float_value>} or {'mean_score': <float_value>}
-    # depending on the version of the metric. Adjust accordingly:
-    score_key = list(results.keys())[0]  # e.g., 'comet' or 'mean_score'
-    
-    return results[score_key]
+    comet_score = comet_metrics.compute(
+        predictions=preds,
+        references=tgt,
+        sources=src,
+    )
 
+    return comet_score['mean_score']
