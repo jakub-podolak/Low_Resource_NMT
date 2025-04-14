@@ -68,6 +68,7 @@ def translate_text(texts, model, tokenizer, max_length=128, batch_size=32):
         translations: List of translated texts
     """
     device = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"Using device: {device}")
     model = model.to(device)
     model.eval()
     translations = []
