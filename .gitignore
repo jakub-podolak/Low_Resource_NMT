@@ -1,2 +1,4 @@
 slurm_logs/
-results/checkpoints/
+results/
+outputs/
+*.pyc

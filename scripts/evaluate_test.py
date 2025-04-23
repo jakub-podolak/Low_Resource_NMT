@@ -15,6 +15,8 @@ TGT_LANG = "ru"
 # List of huggingface datasets and splits to use for testing
 TEST_DATASETS = [
     ("sethjsa/medline_en_ru_parallel", "dev"),
+    ("sethjsa/wmt20bio_en_ru_sent", "test"),
+    ("sethjsa/tico_en_ru", "test"),
 ]
 
 def main():

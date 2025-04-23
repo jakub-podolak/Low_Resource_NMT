@@ -13,5 +13,4 @@ module purge
 module load 2022
 module load Anaconda3/2022.05
 source activate nmt
-# python3 scripts/evaluate_test.py --checkpoint_path results/checkpoints/final_model/best-tuned-opus-mt-en-ru
-python3 scripts/evaluate_test.py --checkpoint_path results/checkpoints/checkpoint-3525
+python3 scripts/evaluate_test.py --checkpoint_path results/checkpoints/final_model/best-tuned-opus-mt-en-ru

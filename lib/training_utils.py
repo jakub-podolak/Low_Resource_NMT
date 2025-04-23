@@ -92,7 +92,9 @@ def translate_text(texts, model, tokenizer, max_length=128, batch_size=32):
                 **inputs,
                 max_length=max_length,
                 temperature=0.0,
-                early_stopping=True
+                early_stopping=True,
+                num_beams=4,
+                num_return_sequences=1,
             )
 
         batch_translations = tokenizer.batch_decode(outputs, skip_special_tokens=True)
