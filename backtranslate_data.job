@@ -1,0 +1,17 @@
+#!/bin/sh
+
+#SBATCH --partition=gpu_a100
+#SBATCH --gpus=1
+#SBATCH --job-name=EVAL_BEAST
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --time=2:00:00
+#SBATCH --output=outputs/BT%A.out
+#SBATCH --error=outputs/BT%A.err
+
+module purge
+module load 2022
+module load Anaconda3/2022.05
+source activate nmt
+python3 scripts/backtranslate.py --dataset_to_backtranslate sethjsa/medline_ru_mono
+python3 scripts/backtranslate.py --dataset_to_backtranslate sethjsa/scipar_ru_mono
