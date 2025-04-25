@@ -13,13 +13,13 @@ from tqdm import tqdm
 from lib.preprocessing import preprocess_data
 from lib.training_utils import train_model
 
-SRC_LANG = "ru"
-TGT_LANG = "en"
-MODEL_NAME = "Helsinki-NLP/opus-mt-ru-en"
-TRAIN_DATASET_NAME = "sethjsa/medline_en_ru_parallel"
+SRC_LANG = "en"
+TGT_LANG = "ru"
+MODEL_NAME = "Helsinki-NLP/opus-mt-en-ru"
+TRAIN_DATASET_NAME = "results/datasets/sethjsa_scipar_ru_mono_backtranslated_with_results_backtranslation_model_finetuned_on_medline.json"
 DEV_DATASET_NAME = "sethjsa/medline_en_ru_parallel"
 TEST_DATASET_NAME = "sethjsa/medline_en_ru_parallel"
-OUTPUT_DIR = "./results/backtranslation_model_finetuned_on_medline"
+OUTPUT_DIR = "./results/scipar_backtranslated_bt_model_finetuned_on_medline"
 
 if __name__ == "__main__":
     if TRAIN_DATASET_NAME.startswith("sethjsa"):
