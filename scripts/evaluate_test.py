@@ -17,6 +17,7 @@ TEST_DATASETS = [
     ("sethjsa/medline_en_ru_parallel", "dev"),
     ("sethjsa/wmt20bio_en_ru_sent", "test"),
     ("sethjsa/tico_en_ru", "test"),
+    ("sethjsa/flores_en_ru", "test"),
 ]
 
 def main():
@@ -37,16 +38,17 @@ def main():
     args = parser.parse_args()
     baseline_model_name = args.baseline_model_name
     checkpoint_path = args.checkpoint_path
+    # load always the baseline model tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(baseline_model_name)
 
     # load model
     if checkpoint_path is not None:
         print(f"[INFO] Loading checkpoint model from: {checkpoint_path}")
         model = AutoModelForSeq2SeqLM.from_pretrained(checkpoint_path)
-        tokenizer = AutoTokenizer.from_pretrained(checkpoint_path)
+        
     else:
         print(f"[INFO] Loading baseline model from: {baseline_model_name}")
         model = AutoModelForSeq2SeqLM.from_pretrained(baseline_model_name)
-        tokenizer = AutoTokenizer.from_pretrained(baseline_model_name)
 
     results = []
 

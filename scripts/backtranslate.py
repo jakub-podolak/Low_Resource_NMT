@@ -47,7 +47,7 @@ def main():
     else:
         print(f"[INFO] Loading baseline model from: {model_used}")
     model = AutoModelForSeq2SeqLM.from_pretrained(model_used)
-    tokenizer = AutoTokenizer.from_pretrained(model_used)
+    tokenizer = AutoTokenizer.from_pretrained(baseline_model_name)
 
     # --- Load dataset ---
     print(f"[INFO] Loading dataset: {args.dataset_to_backtranslate}")

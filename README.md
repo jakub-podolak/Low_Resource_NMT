@@ -8,7 +8,7 @@ Project for NLP2 course at UVA (2025)
 sbatch install_environment.job
 
 # interactive job, 2/4th of a node
-srun --partition=gpu_a100 --gpus=1 --ntasks=1 --cpus-per-task=18 --time=01:00:00 --pty bash -i
+srun --partition=gpu_a100 --gpus=1 --ntasks=1 --cpus-per-task=18 --time=02:00:00 --pty bash -i
 module purge
 module load 2022
 module load Anaconda3/2022.05
