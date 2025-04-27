@@ -101,14 +101,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-"""
-Baseline:
-Dataset: sethjsa/medline_en_ru_parallel, Split: dev, Samples: 1000, śBLEU: 14.95690607848931, COMET: 0.7664666471034288
-
-python3 scripts/evaluate_test.py --checkpoint_path results/checkpoints/HILRfine-tuned-opus-mt-en-ru
-Dataset: sethjsa/medline_en_ru_parallel, Split: dev, Samples: 1000, BLEU: 8.131136051814785, COMET: 0.6586308072209358
-
-python3 scripts/evaluate_test.py --checkpoint_path results/checkpoints/final_model/best-tuned-opus-mt-en-ru
-Dataset: sethjsa/medline_en_ru_parallel, Split: dev, Samples: 1000, BLEU: 9.063520842593954, COMET: 0.6721206496059895
-"""
