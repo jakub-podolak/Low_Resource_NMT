@@ -16,10 +16,12 @@ from lib.training_utils import train_model
 SRC_LANG = "en"
 TGT_LANG = "ru"
 MODEL_NAME = "Helsinki-NLP/opus-mt-en-ru"
-TRAIN_DATASET_NAME = "results/datasets/sethjsa_scipar_ru_mono_backtranslated_with_results_backtranslation_model_finetuned_on_medline.json"
+TRAIN_DATASET_NAME = "results/datasets/sethjsa_medline_ru_mono_bt_results_backtranslation_model_finetuned_on_medline_n5_semantic_entropy"
 DEV_DATASET_NAME = "sethjsa/medline_en_ru_parallel"
 TEST_DATASET_NAME = "sethjsa/medline_en_ru_parallel"
-OUTPUT_DIR = "./results/scipar_backtranslated_bt_model_finetuned_on_medline"
+OUTPUT_DIR = "./results/medline_backtranslated_bt_model_finetuned_on_medline_90th_percentile"
+
+SEMANTIC_ENTROPY_PERCENTILE = 90
 
 if __name__ == "__main__":
     if TRAIN_DATASET_NAME.startswith("sethjsa"):
@@ -32,6 +34,17 @@ if __name__ == "__main__":
 
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
     model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME)
+
+    # if the train data contains column for "semantic_entropy"
+    if "semantic_entropy" in train_dataset["train"].column_names:
+        print(f"Train dataset contains semantic entropy scores")
+        print(f"Train dataset size: {len(train_dataset['train'])}")
+        # take the 90th percentile of the semantic entropy scores
+        # and take only the examples with semantic entropy scores below that (90%)
+        # percentile_90th = np.percentile(train_dataset["train"]["semantic_entropy"], SEMANTIC_ENTROPY_PERCENTILE)
+        # print(f"{SEMANTIC_ENTROPY_PERCENTILE} percentile of semantic entropy: {percentile_90th}")
+        # train_dataset["train"] = train_dataset["train"].filter(lambda x: x["semantic_entropy"] < percentile_90th)
+        print(f"Train dataset size after filtering: {len(train_dataset['train'])}")
 
     # change the splits for actual training. here, using flores-dev as training set because it's small (<1k examples)
     tokenized_train_dataset = preprocess_data(train_dataset, tokenizer, SRC_LANG, TGT_LANG, "train")
