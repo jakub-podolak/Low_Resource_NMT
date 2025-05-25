@@ -17,6 +17,7 @@ source activate nmt
 # python3 scripts/backtranslate.py --dataset_to_backtranslate sethjsa/scipar_ru_mono --checkpoint_path results/backtranslation_model_finetuned_on_medline
 
 python3 scripts/backtranslate_with_semantic_entropy.py \
+        --checkpoint_path results/backtranslation_model_finetuned_on_medline \
         --dataset_to_backtranslate sethjsa/medline_ru_mono \
         --n_samples 5 \
         --batch_size 64 \
