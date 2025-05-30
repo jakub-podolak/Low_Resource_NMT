@@ -83,8 +83,7 @@ evaluation_entropy_experiment.ipynb - to test the impact of selective forward-tr
 
 ```
 rq4_calibration_set.ipynb - to generate set of 1000 samples with COMET scores to generate variations of
-
-generation of synthetic data:  fill this in in repo
+generate_synthetic_variations_rq4.ipynb - to generate variations of the calibration set using LLMs
 
 finetune_one_model_with_extra_synthetic_data.py - script to finetune with both original and synthetic parallel data
 scripts/evaluate_test.py - to evaluate model on all our test datasets
