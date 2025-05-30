@@ -62,7 +62,7 @@ def model_init():
 
 # Define a grid of hyperparameters to search
 hp_grid = {
-    "learning_rate": [1e-5, 2e-5, 5e-5, 1e-4],
+    "learning_rate": [1e-5, 2e-5, 5e-5, 1e-4, 5e-4],
     "weight_decay": [0.0, 0.01, 0.05],
     "num_train_epochs": [3, 8]
 }
